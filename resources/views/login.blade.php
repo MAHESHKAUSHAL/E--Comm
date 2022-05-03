@@ -1,3 +1,6 @@
+  {{-- ek page se dusare page me bhejane ke liye estamal karate h
+    jaise ki ab master page se call karege ok
+    --}}
 @extends('master')
 @section('content')
     <!DOCTYPE html>
@@ -56,8 +59,8 @@
                 padding-top:5px;
                 }
                 /* Change styles for span and cancel button on extra small screens */
-                @media screen and (max-width: 300px) {
-                span.psw {
+     @media screen and (max-width: 300px) {
+                   span.psw {
                     display: block;
                     float: none;
                 }
@@ -69,17 +72,25 @@
      </head>
 <body>
 <h2 style="text-align:center">Login Page</h2>
-<form action="/action_page.php" method="post">
+<form action="login" method="POST">
   {{-- <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div> --}}
   <div class="container custom-login">
      <div class="row">
        <div class="col-sm-4 col-sm-offset-4">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+       <form action="login" method="POST">
+        @csrf
+         <div class="form-outline mb-4">
+            <input type="email" id="form3Example3" name="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+            <label class="form-label" for="form3Example3">Email address</label>
+        </div>
+        <div class="form-outline mb-3">
+            <input type="password" id="form3Example4" name="password"class="form-control form-control-lg"
+              placeholder="Enter password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
             <button type="submit">Login</button>
             {{-- <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -89,10 +100,10 @@
             <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
             --}}
+        </form>
        </div>
      </div>
   </div>
- </form>
  </body>
 </html>
 

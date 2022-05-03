@@ -17,16 +17,14 @@
    <style>
     .custom-login{
         height:400px;
-        padding-top:100px;
+        padding-top:150px;
     }
    </style>
         <body>
          <!-- ek page ko dusare page me bhejane ke liye laravel me use kiya jata h  ok raiper kahate hai  -->
-            {{ View::make('header')}}
-            @yield('content')
-            {{ View::make('footer')}}
-
-
+             {{View::make('header')}}
+              @yield('content')
+              {{View::make('footer')}}
         </body>
             {{-- <script>
                $(Document).ready(function()
@@ -35,8 +33,8 @@
                      alert("all set")
                    });
                });
-            </script> --}}
-</html>
+             </script> --}}
+  </html>
 
 
 
